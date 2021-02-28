@@ -25,3 +25,7 @@ docker run -p 8080:8080 -p 50000:50000 -v /home/mario/data/jenkins:/var/jenkins_
 ./mvnw clean install
 
 java -jar target/cicd-0.0.1-SNAPSHOT.jar
+
+docker build -t ping .
+
+docker run -it --rm -p 8081:8080 --name ping ping
